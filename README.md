@@ -9,7 +9,9 @@ $ yarn
 
 $ touch .env
 
-$ echo "token=XXXX" > .env
+$ echo -n -e \
+  "token=XXXX" \
+  "PORT=XXXX" > .env
 
 $ node app.js
 ```

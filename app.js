@@ -3,7 +3,13 @@ const DOMParser = require('xmldom').DOMParser
 const request   = require('request')
 const Botkit    = require('botkit')
 
+if (!process.env.token || !process.env.port) {
+  console.log('Error: Specify clientId clientSecret and port in environment');
+  process.exit(1);
+}
+
 const controller = Botkit.slackbot({
+    hostname: '0.0.0.0',
     debug: false
 })
 
