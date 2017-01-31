@@ -12,6 +12,7 @@
   "author": "yamasy1549",
   "license": "MIT",
   "dependencies": {
-    "botkit": "^0.4.10"
+    "botkit": "^0.4.10",
+    "dotenv": "^4.0.0"
   }
 }
