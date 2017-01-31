@@ -17,6 +17,12 @@ const bot = controller.spawn({
     token: process.env.token
 }).startRTM()
 
+controller.hears(['ping'], ['direct_mention', 'mention'], function(bot, message) {
+    controller.storage.users.get(message.user, function(err, user) {
+        bot.reply(message, 'nya~n')
+    })
+})
+
 controller.hears(['theme', 'テーマ'], 'ambient', function(bot, message) {
     controller.storage.users.get(message.user, function(err, user) {
         url = 'https://ja.wikipedia.org/w/api.php?format=xml&action=query&list=random&rnnamespace=0&rnlimit=1'
